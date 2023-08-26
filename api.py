@@ -15,8 +15,11 @@ class APIClient:
     def get_team_statistics(self):
         url = f"{self.base_url}fileType={self.file_type}&season={self.season}&statType={self.stat_type}"
         response = self.http_client.get(url)
-        print(response.status_code)
-        print(response.text)  # Print the response content
+
+        print("Request URL:", url)
+        print("Response Status Code:", response.status_code)
+        print("Response Text:", response.text)  # Print the response content
+
         response_json = response.json()
 
         team_stats_list = []
@@ -48,7 +51,6 @@ class APIClient:
 
         return team_stats_list
 
-
     def insert_team_statistics(self, team_stats):
         connection = sqlite3.connect('team_stats.db')
         cursor = connection.cursor()
@@ -66,8 +68,6 @@ class APIClient:
         data = cursor.fetchall()
         connection.close()
         return data
-
-
 
     def create_database(self):
         connection = sqlite3.connect('team_stats.db')
