@@ -1,4 +1,4 @@
-# API Client class
+# API class
 import requests
 from teamDetails import TeamStatistics
 import sqlite3
