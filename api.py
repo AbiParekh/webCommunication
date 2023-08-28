@@ -38,9 +38,9 @@ class API:
                     team_stats_list.append(
                         TeamStatistics(
                             vis_stats['teamName'],
+                            vis_stats.get('teamNumber', ''),
                             vis_stats.get('teamCode', ''),
-                            vis_stats.get('teamCode', ''),  # Assuming this is correct
-                            vis_stats.get('score', 0)
+                            vis_stats.get('score')
                         )
                     )
 
@@ -48,10 +48,13 @@ class API:
                     team_stats_list.append(
                         TeamStatistics(
                             home_stats['teamName'],
+                            home_stats.get('teamNumber', ''),
                             home_stats.get('teamCode', ''),
-                            home_stats.get('teamCode', ''),  # Assuming this is correct
-                            home_stats.get('score', 0)
+                            home_stats.get('score')
                         )
                     )
 
         return team_stats_list
+
+
+

@@ -8,7 +8,9 @@ class TeamStatistics:
         self.team_code = team_code
         self.score = score
 
+    def __str__(self):
+        return f"Team Name: {self.team_name}, Team Code: {self.team_code}, Score: {self.score}"
+
     def add_to_tuple(self):
         return self.team_name, self.team_number, self.team_code, self.score
-
 
