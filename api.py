@@ -23,8 +23,8 @@ class API:
             print("Request URL:", url)
             print("Response Status Code:", response.status_code)
             print("Response Text:", response.text)  # Print the response content
-            print("Response JSON:", response_json)
-            # response_json = response.json()
+            print("JSON Response:", response_json)
+            print()
 
             # Save the JSON response to a file
             with open(f"team_stats_{team_name}.json", "w") as json_file:
@@ -58,3 +58,4 @@ class API:
                         )
 
         return team_stats_list
+
